@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        class Person {
+
+            constructor(firstNameValue, lastNameValue, celiacValue, heightValue, weightValue, hobbiesValue) {
+                this.firstName = firstNameValue
+                this.lastName = lastNameValue
+                this.celiac = celiacValue
+                this.height = heightValue
+                this.weight = weightValue
+                this.hobbies = hobbiesValue
+                this.alive = true
+            }
+
+            learnNewHobby(newHobby) {
+                this.hobbies.push(newHobby)
+            }
+
+        }
+
+
+        // Instances
+        const person1 = new Person('Sonia', 'Whatever', false, 1.87, 89, ['sky', 'chess'])
+        const person2 = new Person('Selena', 'Lol', true, 1.66, 89, ['sing', 'dance'])
+
+
+
+
+        console.log('Esto es una instancia:', person1)
+
+
+
+
+        console.log(`La persona se llama`, person1.firstName, 'y mide', person1.height, 'cmts')
+
+
+
+
+        console.log('Tengo', person1.hobbies.length, 'hobbies, y son', person1.hobbies)
+
+        person1.learnNewHobby('chess')
+
+        console.log('Tengo', person1.hobbies.length, 'hobbies, y son', person1.hobbies)
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

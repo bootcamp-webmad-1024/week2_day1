@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const person = {
+            firstName: 'Germán',
+            lastname: 'Álvarez',
+            celiac: false,
+            height: 1.85,
+            weight: 89,
+            birth: new Date(1986, 4, 23),
+            favDrink: 'Cacaolat',
+            hobbies: ['sky', 'gadgets', 'beer'],
+            occupation: {
+                job: 'Teacher',
+                company: 'Ironhack',
+                salary: 24000
+            },
+            subscriptions: [
+                {
+                    service: 'Netflix',
+                    cost: 12.99,
+                    active: true
+                },
+                {
+                    service: 'HBO',
+                    cost: 10.99,
+                    active: false
+                }
+            ],
+            learnNewHobby(newHobby) {
+                this.hobbies.push(newHobby)
+            },
+            getTotalSubscriptionsCost() {
+                let totalCost = 0
+                this.subscriptions.forEach(eachSubscription => {
+                    totalCost += eachSubscription.cost
+                })
+                return totalCost
+            },
+            subscribe(serviceName, serviceCost, serviceActive = true) {
+
+                const newSubscription = {
+                    name: serviceName,
+                    cost: serviceCost,
+                    active: serviceActive
+                }
+
+                this.subscriptions.push(newSubscription)
+            }
+        }
+
+
+
+
+        // Method 1
+
+        console.log('Tengo', person.hobbies.length, 'hobbies, y son', person.hobbies)
+
+        person.learnNewHobby('chess')
+
+        console.log('Tengo', person.hobbies.length, 'hobbies, y son', person.hobbies)
+
+
+
+
+        // Method 2
+
+        const cost = person.getTotalSubscriptionsCost()
+
+        console.log('Ahora me gasto', cost, 'en suscripciones D:')
+
+
+
+
+        // Method 3
+
+        person.subscribe('Car2go', 40.5)
+
+        console.log('Ahora tengo', person.subscriptions.length, 'suscritpiones que son', person.subscriptions)
+
+        console.log('Ahora me gasto', cost, 'en suscripciones D:')
+
+
+
+    </script>
+
+
+</body>
+
+</html>
